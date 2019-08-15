@@ -11,7 +11,27 @@ import Foundation
 
 
 class InterfaceController: WKInterfaceController {
-
+    var currentCount: Int = 0
+    @IBOutlet var counterButtton: WKInterfaceButton!
+    @IBOutlet var timer: WKInterfaceTimer!
+    
+    @IBAction func onTimerStop() {
+        timer.stop()
+        timer.setTextColor(UIColor.red)
+    }
+    @IBAction func onTimerStart() {
+        timer.setDate(Date())
+        timer.start()
+        timer.setTextColor(UIColor.green)
+    }
+    @IBAction func onCounterClick() {
+        currentCount += 1
+        counterButtton.setTitle(String(currentCount))
+    }
+    @IBAction func onDecrementCounter() {
+        currentCount -= 1
+        counterButtton.setTitle(String(currentCount))
+    }
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
