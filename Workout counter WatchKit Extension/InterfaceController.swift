@@ -24,13 +24,20 @@ class InterfaceController: WKInterfaceController {
         timer.start()
         timer.setTextColor(UIColor.green)
     }
-    @IBAction func onCounterClick() {
+
+    @IBAction func onIncrementCounter() {
         currentCount += 1
-        counterButtton.setTitle(String(currentCount))
+        updateInterface()
     }
     @IBAction func onDecrementCounter() {
         currentCount -= 1
-        counterButtton.setTitle(String(currentCount))
+        updateInterface()
+    }
+    @IBAction func onReset() {
+        currentCount = 0
+        timer.setDate(Date())
+        timer.stop()
+        updateInterface()
     }
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
@@ -47,5 +54,14 @@ class InterfaceController: WKInterfaceController {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
     }
-
+    
+    func updateInterface() {
+        counterButtton.setTitle(String(currentCount))
+        
+        UserDefaults.standard.set(currentCount, forKey:  "count")
+        let complicationServer = CLKComplicationServer.sharedInstance()
+        for complication in complicationServer.activeComplications! {
+            complicationServer.reloadTimeline(for: complication)
+        }
+    }
 }

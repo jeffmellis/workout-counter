@@ -1,25 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="13771" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14490.70" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
     <device id="watch38" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="watchOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="13756"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14490.21"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Courier.ttc">
-            <string>Courier</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Workout_counter_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <group width="1" height="0.59999999999999998" alignment="left" id="h3a-cL-CMf" userLabel="TimerGroup">
+                        <group width="1" height="0.5" alignment="left" id="h3a-cL-CMf" userLabel="TimerGroup">
                             <items>
                                 <timer width="0.59999999999999998" height="1" alignment="left" verticalAlignment="center" textAlignment="left" baselineAdjustment="alignCenters" id="q5q-Z4-BGb">
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -61,7 +56,23 @@
                                         <fontDescription key="font" type="system" pointSize="36"/>
                                     </variation>
                                     <connections>
-                                        <action selector="onCounterClick" destination="AgC-eL-Hgc" id="s2Y-aX-0U9"/>
+                                        <action selector="onIncrementCounter" destination="AgC-eL-Hgc" id="j5q-E4-uY8"/>
+                                    </connections>
+                                </button>
+                                <button width="0.80000000000000004" height="1" alignment="left" title="0" id="6iS-D7-ffm" userLabel="Counter">
+                                    <fontDescription key="font" type="system" pointSize="30"/>
+                                    <variation key="device=watch42mm">
+                                        <fontDescription key="font" type="system" pointSize="36"/>
+                                    </variation>
+                                </button>
+                            </items>
+                        </group>
+                        <group width="1" height="0.10000000000000001" alignment="left" id="WL0-Mb-oIg" userLabel="CounterGroup">
+                            <items>
+                                <button width="1" height="1" alignment="left" title="RESET" id="203-Bz-SwQ" userLabel="Reset">
+                                    <fontDescription key="font" type="system" pointSize="14"/>
+                                    <connections>
+                                        <action selector="onReset" destination="AgC-eL-Hgc" id="WpA-dk-imH"/>
                                     </connections>
                                 </button>
                             </items>

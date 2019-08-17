@@ -8,9 +8,11 @@
 
 import ClockKit
 
-
+//@NSCopying var textProvider: CLKTextProvider { get set }
+//CLKComplicationTemplate
 class ComplicationController: NSObject, CLKComplicationDataSource {
     
+
     // MARK: - Timeline Configuration
     
     func getSupportedTimeTravelDirections(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTimeTravelDirections) -> Void) {
@@ -30,10 +32,19 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     }
     
     // MARK: - Timeline Population
-    
     func getCurrentTimelineEntry(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTimelineEntry?) -> Void) {
-        // Call the handler with the current timeline entry
-        handler(nil)
+        let defaults = UserDefaults.standard
+        let countFromApp = defaults.string(forKey: "count")
+        let count = countFromApp ?? "0"
+        
+        var entry: CLKComplicationTimelineEntry?
+        if (complication.family == .modularSmall) {
+            let template = CLKComplicationTemplateModularSmallSimpleText()
+            template.textProvider = CLKSimpleTextProvider(text: String(count))
+            entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: template)
+        }
+        
+        handler(entry)
     }
     
     func getTimelineEntries(for complication: CLKComplication, before date: Date, limit: Int, withHandler handler: @escaping ([CLKComplicationTimelineEntry]?) -> Void) {
