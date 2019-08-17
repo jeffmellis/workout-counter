@@ -475,6 +475,7 @@
 				DEVELOPMENT_TEAM = 7EY932B8M7;
 				INFOPLIST_FILE = "Workout counter WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jeff.mellis.Workout-counter.watchkitapp.watchkitextension";
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -492,6 +493,7 @@
 				DEVELOPMENT_TEAM = 7EY932B8M7;
 				INFOPLIST_FILE = "Workout counter WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jeff.mellis.Workout-counter.watchkitapp.watchkitextension";
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
