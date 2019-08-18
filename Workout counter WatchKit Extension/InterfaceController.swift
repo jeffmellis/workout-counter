@@ -12,17 +12,29 @@ import Foundation
 
 class InterfaceController: WKInterfaceController {
     var currentCount: Int = 0
+    var isStopped = true
     @IBOutlet var counterButtton: WKInterfaceButton!
     @IBOutlet var timer: WKInterfaceTimer!
     
-    @IBAction func onTimerStop() {
-        timer.stop()
-        timer.setTextColor(UIColor.red)
+    
+    @IBAction func onTimerClick(_ sender: Any) {
+        if (isStopped) {
+            onTimerStart()
+        } else {
+            onTimerStop()
+        }
     }
-    @IBAction func onTimerStart() {
+    
+    func onTimerStop(textColor: UIColor = UIColor.red) {
+        timer.stop()
+        timer.setTextColor(textColor)
+        isStopped = true
+    }
+    func onTimerStart(textColor: UIColor = UIColor.green) {
         timer.setDate(Date())
         timer.start()
-        timer.setTextColor(UIColor.green)
+        timer.setTextColor(textColor)
+        isStopped = false
     }
 
     @IBAction func onIncrementCounter() {
@@ -36,7 +48,7 @@ class InterfaceController: WKInterfaceController {
     @IBAction func onReset() {
         currentCount = 0
         timer.setDate(Date())
-        timer.stop()
+        onTimerStop(textColor: UIColor.white)
         updateInterface()
     }
     override func awake(withContext context: Any?) {

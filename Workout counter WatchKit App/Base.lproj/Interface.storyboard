@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14490.70" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
-    <device id="watch38" orientation="portrait">
+    <device id="watch44" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -16,30 +16,18 @@
                     <items>
                         <group width="1" height="0.5" alignment="left" id="h3a-cL-CMf" userLabel="TimerGroup">
                             <items>
-                                <timer width="0.59999999999999998" height="1" alignment="left" verticalAlignment="center" textAlignment="left" baselineAdjustment="alignCenters" id="q5q-Z4-BGb">
-                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <fontDescription key="font" name="Courier" family="Courier" pointSize="30"/>
+                                <timer width="1" height="1" alignment="left" verticalAlignment="center" textAlignment="center" baselineAdjustment="alignCenters" id="q5q-Z4-BGb">
+                                    <gestureRecognizers>
+                                        <tapGestureRecognizer id="jtX-QR-guE">
+                                            <connections>
+                                                <action selector="onTimerClick:" destination="AgC-eL-Hgc" id="CoX-No-niK"/>
+                                            </connections>
+                                        </tapGestureRecognizer>
+                                    </gestureRecognizers>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="font" name="Courier" family="Courier" pointSize="55"/>
                                     <calendarUnit key="units" minute="YES" second="YES"/>
-                                    <variation key="device=watch42mm">
-                                        <fontDescription key="font" name="Courier" family="Courier" pointSize="36"/>
-                                    </variation>
                                 </timer>
-                                <group width="0.40000000000000002" height="1" alignment="right" layout="vertical" id="fDc-E8-bTh" userLabel="TimerActionsGroup">
-                                    <items>
-                                        <button width="1" height="0.5" alignment="right" id="DeB-ZK-AOs" userLabel="StartTimer">
-                                            <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <connections>
-                                                <action selector="onTimerStart" destination="AgC-eL-Hgc" id="C9l-JM-mPH"/>
-                                            </connections>
-                                        </button>
-                                        <button width="1" height="0.5" alignment="right" id="L0J-eD-Ueq" userLabel="StopTimer">
-                                            <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <connections>
-                                                <action selector="onTimerStop" destination="AgC-eL-Hgc" id="WOM-GM-uSb"/>
-                                            </connections>
-                                        </button>
-                                    </items>
-                                </group>
                             </items>
                         </group>
                         <group width="1" height="0.40000000000000002" alignment="left" id="ebX-ba-ye8" userLabel="CounterGroup">
@@ -50,24 +38,15 @@
                                         <action selector="onDecrementCounter" destination="AgC-eL-Hgc" id="lk2-sJ-Zct"/>
                                     </connections>
                                 </button>
-                                <button width="0.80000000000000004" height="1" alignment="left" title="0" id="YpR-uF-3Un" userLabel="Counter">
-                                    <fontDescription key="font" type="system" pointSize="30"/>
-                                    <variation key="device=watch42mm">
-                                        <fontDescription key="font" type="system" pointSize="36"/>
-                                    </variation>
+                                <button width="0.80000000000000004" height="1" alignment="center" verticalAlignment="center" title="0" id="6iS-D7-ffm" userLabel="Counter">
+                                    <fontDescription key="font" type="system" pointSize="40"/>
                                     <connections>
-                                        <action selector="onIncrementCounter" destination="AgC-eL-Hgc" id="j5q-E4-uY8"/>
+                                        <action selector="onIncrementCounter" destination="AgC-eL-Hgc" id="ymE-WH-saN"/>
                                     </connections>
-                                </button>
-                                <button width="0.80000000000000004" height="1" alignment="left" title="0" id="6iS-D7-ffm" userLabel="Counter">
-                                    <fontDescription key="font" type="system" pointSize="30"/>
-                                    <variation key="device=watch42mm">
-                                        <fontDescription key="font" type="system" pointSize="36"/>
-                                    </variation>
                                 </button>
                             </items>
                         </group>
-                        <group width="1" height="0.10000000000000001" alignment="left" id="WL0-Mb-oIg" userLabel="CounterGroup">
+                        <group width="1" height="0.10000000000000001" alignment="left" id="WL0-Mb-oIg" userLabel="ResetGroup">
                             <items>
                                 <button width="1" height="1" alignment="left" title="RESET" id="203-Bz-SwQ" userLabel="Reset">
                                     <fontDescription key="font" type="system" pointSize="14"/>
@@ -79,7 +58,7 @@
                         </group>
                     </items>
                     <connections>
-                        <outlet property="counterButtton" destination="YpR-uF-3Un" id="jnx-h9-n1a"/>
+                        <outlet property="counterButtton" destination="6iS-D7-ffm" id="rN4-gb-YeE"/>
                         <outlet property="timer" destination="q5q-Z4-BGb" id="dYW-2X-CiE"/>
                     </connections>
                 </controller>
