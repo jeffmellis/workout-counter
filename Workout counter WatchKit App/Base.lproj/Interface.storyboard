@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14490.70" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
-    <device id="watch44" orientation="portrait">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14490.70" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc" pageOrientation="vertical">
+    <device id="watch38" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -9,10 +9,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14490.21"/>
     </dependencies>
     <scenes>
-        <!--Interface Controller-->
+        <!--main Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Workout_counter_WatchKit_App" customModuleProvider="target">
+                <controller id="AgC-eL-Hgc" userLabel="main Interface Controller" customClass="InterfaceController" customModule="Workout_counter_WatchKit_App" customModuleProvider="target">
                     <items>
                         <group width="1" height="0.5" alignment="left" id="h3a-cL-CMf" userLabel="TimerGroup">
                             <items>
@@ -60,6 +60,7 @@
                     <connections>
                         <outlet property="counterButtton" destination="6iS-D7-ffm" id="rN4-gb-YeE"/>
                         <outlet property="timer" destination="q5q-Z4-BGb" id="dYW-2X-CiE"/>
+                        <segue destination="WcE-Wl-jBl" kind="relationship" relationship="nextPage" id="Obs-Fw-Hf1"/>
                     </connections>
                 </controller>
             </objects>
@@ -81,12 +82,37 @@
             </objects>
             <point key="canvasLocation" x="220" y="643"/>
         </scene>
+        <!--Interface Controller-->
+        <scene sceneID="0dI-aW-8gu">
+            <objects>
+                <controller id="ihq-GD-66z">
+                    <items>
+                        <homekitCamera alignment="left" id="lTX-57-pO3"/>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="785" y="345"/>
+        </scene>
         <!--Notification Controller-->
         <scene sceneID="ZPc-GJ-vnh">
             <objects>
                 <controller id="4sK-HA-Art" customClass="NotificationController" customModule="Workout_counter_WatchKit_App" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="468" y="643"/>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="ano-SP-Gqh">
+            <objects>
+                <controller id="WcE-Wl-jBl">
+                    <items>
+                        <nowPlayingView alignment="center" verticalAlignment="center" alpha="0.94999999999999996" id="Qbt-z6-apj"/>
+                    </items>
+                    <connections>
+                        <segue destination="ihq-GD-66z" kind="relationship" relationship="nextPage" id="iq8-EC-cmM"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="493" y="345"/>
         </scene>
     </scenes>
 </document>
