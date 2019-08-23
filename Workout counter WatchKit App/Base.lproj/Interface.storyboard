@@ -9,10 +9,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14490.21"/>
     </dependencies>
     <scenes>
-        <!--main Interface Controller-->
+        <!--Counter Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" userLabel="main Interface Controller" customClass="InterfaceController" customModule="Workout_counter_WatchKit_App" customModuleProvider="target">
+                <controller id="AgC-eL-Hgc" userLabel="Counter Controller" customClass="InterfaceController" customModule="Workout_counter_WatchKit_App" customModuleProvider="target">
                     <items>
                         <group width="1" height="0.5" alignment="left" id="h3a-cL-CMf" userLabel="TimerGroup">
                             <items>
@@ -60,7 +60,7 @@
                     <connections>
                         <outlet property="counterButtton" destination="6iS-D7-ffm" id="rN4-gb-YeE"/>
                         <outlet property="timer" destination="q5q-Z4-BGb" id="dYW-2X-CiE"/>
-                        <segue destination="WcE-Wl-jBl" kind="relationship" relationship="nextPage" id="Obs-Fw-Hf1"/>
+                        <segue destination="Spx-W5-gKc" kind="relationship" relationship="nextPage" id="fVK-57-KuJ"/>
                     </connections>
                 </controller>
             </objects>
@@ -82,17 +82,6 @@
             </objects>
             <point key="canvasLocation" x="220" y="643"/>
         </scene>
-        <!--Interface Controller-->
-        <scene sceneID="0dI-aW-8gu">
-            <objects>
-                <controller id="ihq-GD-66z">
-                    <items>
-                        <homekitCamera alignment="left" id="lTX-57-pO3"/>
-                    </items>
-                </controller>
-            </objects>
-            <point key="canvasLocation" x="785" y="345"/>
-        </scene>
         <!--Notification Controller-->
         <scene sceneID="ZPc-GJ-vnh">
             <objects>
@@ -100,19 +89,46 @@
             </objects>
             <point key="canvasLocation" x="468" y="643"/>
         </scene>
-        <!--Interface Controller-->
-        <scene sceneID="ano-SP-Gqh">
+        <!--Workout Controller-->
+        <scene sceneID="Eoy-bg-YM1">
             <objects>
-                <controller id="WcE-Wl-jBl">
+                <controller id="Spx-W5-gKc" userLabel="Workout Controller" customClass="WorkoutController" customModule="Workout_counter_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <nowPlayingView alignment="center" verticalAlignment="center" alpha="0.94999999999999996" id="Qbt-z6-apj"/>
+                        <picker width="1" height="0.59999999999999998" alignment="center" id="ihR-7s-W3q"/>
+                        <group width="1" height="0.40000000000000002" alignment="center" verticalAlignment="bottom" layout="vertical" id="g3k-aH-Qmy">
+                            <items>
+                                <group width="1" height="0.59999999999999998" alignment="center" verticalAlignment="bottom" id="z7q-Dm-2DA">
+                                    <items>
+                                        <button width="0.5" height="1" alignment="left" title="R: 0" id="Iwb-C6-aHP">
+                                            <connections>
+                                                <action selector="onRepButtonClick" destination="Spx-W5-gKc" id="poe-aP-IHV"/>
+                                            </connections>
+                                        </button>
+                                        <button width="0.5" height="1" alignment="left" title="W: 200" id="N7O-J5-cmB">
+                                            <connections>
+                                                <action selector="onWeightButtonClick" destination="Spx-W5-gKc" id="DFT-vD-CgD"/>
+                                            </connections>
+                                        </button>
+                                    </items>
+                                </group>
+                                <button width="1" height="0.40000000000000002" alignment="center" verticalAlignment="bottom" title="Done Set" id="dMs-ut-LgO">
+                                    <fontDescription key="font" type="system" pointSize="15"/>
+                                    <connections>
+                                        <action selector="onDoneSetButtonClick" destination="Spx-W5-gKc" id="P50-wg-wYD"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
                     </items>
                     <connections>
-                        <segue destination="ihq-GD-66z" kind="relationship" relationship="nextPage" id="iq8-EC-cmM"/>
+                        <outlet property="doneSetButton" destination="dMs-ut-LgO" id="fsc-BG-gOk"/>
+                        <outlet property="exercisepicker" destination="ihR-7s-W3q" id="1aW-35-Y3X"/>
+                        <outlet property="repButton" destination="Iwb-C6-aHP" id="NOc-tO-WOl"/>
+                        <outlet property="weightButton" destination="N7O-J5-cmB" id="Gj3-py-Nak"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="493" y="345"/>
+            <point key="canvasLocation" x="568" y="345"/>
         </scene>
     </scenes>
 </document>

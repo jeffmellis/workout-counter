@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07351A07230D122500FA6675 /* WorkoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07351A06230D122500FA6675 /* WorkoutController.swift */; };
 		076BE82A23046999001FBD3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076BE82923046999001FBD3F /* AppDelegate.swift */; };
 		076BE82C23046999001FBD3F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076BE82B23046999001FBD3F /* ViewController.swift */; };
 		076BE82F23046999001FBD3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 076BE82D23046999001FBD3F /* Main.storyboard */; };
@@ -66,6 +67,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		07351A06230D122500FA6675 /* WorkoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutController.swift; sourceTree = "<group>"; };
 		076BE82623046999001FBD3F /* Workout counter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Workout counter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		076BE82923046999001FBD3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		076BE82B23046999001FBD3F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 				076BE85423046999001FBD3F /* Assets.xcassets */,
 				076BE85623046999001FBD3F /* Info.plist */,
 				076BE85723046999001FBD3F /* PushNotificationPayload.apns */,
+				07351A06230D122500FA6675 /* WorkoutController.swift */,
 			);
 			path = "Workout counter WatchKit Extension";
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 				076BE85323046999001FBD3F /* ComplicationController.swift in Sources */,
 				076BE84F23046999001FBD3F /* ExtensionDelegate.swift in Sources */,
 				076BE84D23046999001FBD3F /* InterfaceController.swift in Sources */,
+				07351A07230D122500FA6675 /* WorkoutController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,7 +9,6 @@
 import WatchKit
 import Foundation
 
-
 class InterfaceController: WKInterfaceController {
     var currentCount: Int = 0
     var isStopped = true
